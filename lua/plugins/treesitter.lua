@@ -28,6 +28,8 @@ return {
       "typescript",
       "vim",
       "yaml",
+      "go",
+      "ocaml",
     },
     incremental_selection = {
       enable = true,

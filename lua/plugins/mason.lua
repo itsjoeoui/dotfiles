@@ -7,6 +7,10 @@ return {
       "shfmt",
       "black",
       "pyright",
+      "gopls",
+      "rust-analyzer",
+      "ocamlformat",
+      "ocaml-lsp",
     },
   },
 }

@@ -7,7 +7,9 @@ return {
     return {
       sources = {
         nls.builtins.formatting.stylua,
+        nls.builtins.formatting.rustfmt,
         nls.builtins.formatting.black,
+        nls.builtins.formatting.ocamlformat,
       },
     }
   end,
