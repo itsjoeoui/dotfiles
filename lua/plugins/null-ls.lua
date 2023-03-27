@@ -10,6 +10,7 @@ return {
         nls.builtins.formatting.rustfmt,
         nls.builtins.formatting.black,
         nls.builtins.formatting.ocamlformat,
+        nls.builtins.formatting.prettier,
       },
     }
   end,
