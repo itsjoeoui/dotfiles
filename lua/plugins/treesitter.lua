@@ -23,6 +23,7 @@ return {
       "markdown_inline",
       "python",
       "query",
+      "jsonc",
       "regex",
       "tsx",
       "typescript",

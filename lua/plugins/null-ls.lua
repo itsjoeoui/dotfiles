@@ -10,7 +10,8 @@ return {
         nls.builtins.formatting.rustfmt,
         nls.builtins.formatting.black,
         nls.builtins.formatting.ocamlformat,
-        nls.builtins.formatting.prettier,
+        nls.builtins.formatting.prettierd,
+        require("typescript.extensions.null-ls.code-actions"),
       },
     }
   end,
