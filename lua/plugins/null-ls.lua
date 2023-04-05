@@ -11,6 +11,7 @@ return {
         nls.builtins.formatting.black,
         nls.builtins.formatting.ocamlformat,
         nls.builtins.formatting.prettierd,
+        nls.builtins.formatting.fourmolu,
         require("typescript.extensions.null-ls.code-actions"),
       },
     }
