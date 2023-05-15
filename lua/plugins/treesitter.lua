@@ -23,6 +23,7 @@ return {
       "yaml",
       "go",
       "ocaml",
+      "astro",
     },
     incremental_selection = {
       enable = true,

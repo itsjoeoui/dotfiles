@@ -5,6 +5,7 @@ return {
       "stylua",
       "shellcheck",
       "typescript-language-server",
+      "astro-language-server",
       "shfmt",
       "black",
       "pyright",
