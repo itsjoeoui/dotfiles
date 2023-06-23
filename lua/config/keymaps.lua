@@ -13,6 +13,8 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
+map("x", "<leader>p", [["_dp]])
+
 map("i", "<A-j>", "j")
 map("i", "<A-k>", "k")
 map("v", "<A-j>", "j")

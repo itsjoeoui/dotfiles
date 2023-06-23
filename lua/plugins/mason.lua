@@ -19,6 +19,7 @@ return {
       "prettierd",
       "fourmolu",
       "haskell-language-server",
+      "emmet-ls",
     },
   },
 }
