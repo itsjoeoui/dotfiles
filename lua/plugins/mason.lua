@@ -13,7 +13,6 @@ return {
       "json-lsp",
       "lua-language-server",
       "rust-analyzer",
-      "rustfmt",
       "ocamlformat",
       "ocaml-lsp",
       "prettierd",
