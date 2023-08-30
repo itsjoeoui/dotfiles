@@ -25,6 +25,7 @@ return {
       "go",
       "ocaml",
       "astro",
+      "clojure",
     },
   },
 }
