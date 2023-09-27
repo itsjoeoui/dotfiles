@@ -14,7 +14,6 @@ return {
       "lua-language-server",
       "rust-analyzer",
       "ocamlformat",
-      "ocaml-lsp",
       "prettierd",
       "fourmolu",
       "haskell-language-server",
