@@ -18,6 +18,7 @@ return {
       "fourmolu",
       "haskell-language-server",
       "emmet-ls",
+      "eslint_d",
     },
   },
 }

@@ -1,5 +1,5 @@
 return {
-  "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
   opts = function()
     local nls = require("null-ls")
     return {
@@ -10,7 +10,6 @@ return {
         nls.builtins.formatting.prettierd,
         nls.builtins.formatting.fourmolu,
         nls.builtins.code_actions.eslint_d,
-        require("typescript.extensions.null-ls.code-actions"),
       },
     }
   end,
