@@ -13,7 +13,6 @@ return {
       "json-lsp",
       "lua-language-server",
       "rust-analyzer",
-      "ocamlformat",
       "prettierd",
       "fourmolu",
       "haskell-language-server",
