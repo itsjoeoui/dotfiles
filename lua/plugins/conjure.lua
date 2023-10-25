@@ -1,5 +1,6 @@
 return {
   "Olical/conjure",
+  lazy = true,
   ft = { "clojure", "fennel" }, -- etc
   -- [Optional] cmp-conjure for cmp
   dependencies = {

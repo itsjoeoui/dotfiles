@@ -14,6 +14,7 @@ return {
       astro = { { "prettierd", "prettier" } },
 
       go = { "goimports", "gofumpt" },
+      json = { "prettierd", "prettier" },
 
       -- Use the "*" filetype to run formatters on all filetypes.
       ["*"] = { "codespell" },
