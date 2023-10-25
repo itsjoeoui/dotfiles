@@ -1,6 +1,6 @@
 return {
   {
-    "alexghergh/nvim-tmux-navigation",
+    "christoomey/vim-tmux-navigator",
     event = "BufReadPre",
   },
 }
