@@ -13,13 +13,16 @@ return {
       javascriptreact = { { "prettierd", "prettier" } },
       typescript = { { "prettierd", "prettier" } },
       typescriptreact = { { "prettierd", "prettier" } },
+      vue = { { "prettierd", "prettier" } },
 
       html = { { "prettierd", "prettier" } },
 
-      astro = { { "prettierd", "prettier" } },
+      astro = { { "prettier" } },
 
       go = { "goimports", "gofumpt" },
+
       json = { "prettierd", "prettier" },
+      toml = { "taplo" },
 
       -- Use the "*" filetype to run formatters on all filetypes.
       ["*"] = { "codespell" },

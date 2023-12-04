@@ -18,6 +18,7 @@ return {
       "haskell-language-server",
       "emmet-ls",
       "eslint_d",
+      "vue-language-server",
     },
   },
 }

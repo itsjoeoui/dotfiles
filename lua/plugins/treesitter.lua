@@ -26,6 +26,7 @@ return {
       "ocaml",
       "astro",
       "clojure",
+      "vue",
     },
   },
 }
