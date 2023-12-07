@@ -19,6 +19,7 @@ return {
       "emmet-ls",
       "eslint_d",
       "vue-language-server",
+      "zls",
     },
   },
 }
