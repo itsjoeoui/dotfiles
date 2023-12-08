@@ -25,6 +25,8 @@ return {
       json = { "prettierd", "prettier" },
       toml = { "taplo" },
 
+      markdown = { "prettierd", "prettier" },
+
       -- Use the "*" filetype to run formatters on all filetypes.
       ["*"] = { "codespell" },
 
