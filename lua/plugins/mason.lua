@@ -20,6 +20,7 @@ return {
       "eslint_d",
       "vue-language-server",
       "zls",
+      "templ",
     },
   },
 }

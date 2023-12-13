@@ -20,6 +20,7 @@ return {
       astro = { { "prettier" } },
 
       go = { "goimports", "gofumpt" },
+      templ = { "templ" },
       rust = { "rustfmt" },
 
       json = { "prettierd", "prettier" },
