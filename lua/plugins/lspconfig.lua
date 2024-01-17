@@ -22,48 +22,48 @@ return {
       pyright = {},
       ruff_lsp = {},
       clangd = {},
-      tsserver = {
-        settings = {
-          typescript = {
-            format = {
-              indentSize = vim.o.shiftwidth,
-              convertTabsToSpaces = vim.o.expandtab,
-              tabSize = vim.o.tabstop,
-            },
-            inlayHints = {
-              -- taken from https://github.com/typescript-language-server/typescript-language-server#workspacedidchangeconfiguration
-              includeInlayEnumMemberValueHints = true,
-              includeInlayFunctionLikeReturnTypeHints = true,
-              includeInlayFunctionParameterTypeHints = true,
-              includeInlayParameterNameHints = "all",
-              includeInlayParameterNameHintsWhenArgumentMatchesName = true, -- false
-              includeInlayPropertyDeclarationTypeHints = true,
-              includeInlayVariableTypeHints = true,
-              includeInlayVariableTypeHintsWhenTypeMatchesName = true, -- false
-            },
-          },
-          javascript = {
-            format = {
-              indentSize = vim.o.shiftwidth,
-              convertTabsToSpaces = vim.o.expandtab,
-              tabSize = vim.o.tabstop,
-            },
-            inlayHints = {
-              includeInlayEnumMemberValueHints = true,
-              includeInlayFunctionLikeReturnTypeHints = true,
-              includeInlayFunctionParameterTypeHints = true,
-              includeInlayParameterNameHints = "all",
-              includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-              includeInlayPropertyDeclarationTypeHints = true,
-              includeInlayVariableTypeHints = true,
-              includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-            },
-          },
-          completions = {
-            completeFunctionCalls = true,
-          },
-        },
-      },
+      -- tsserver = {
+      --   settings = {
+      --     typescript = {
+      --       format = {
+      --         indentSize = vim.o.shiftwidth,
+      --         convertTabsToSpaces = vim.o.expandtab,
+      --         tabSize = vim.o.tabstop,
+      --       },
+      --       inlayHints = {
+      --         -- taken from https://github.com/typescript-language-server/typescript-language-server#workspacedidchangeconfiguration
+      --         includeInlayEnumMemberValueHints = true,
+      --         includeInlayFunctionLikeReturnTypeHints = true,
+      --         includeInlayFunctionParameterTypeHints = true,
+      --         includeInlayParameterNameHints = "all",
+      --         includeInlayParameterNameHintsWhenArgumentMatchesName = true, -- false
+      --         includeInlayPropertyDeclarationTypeHints = true,
+      --         includeInlayVariableTypeHints = true,
+      --         includeInlayVariableTypeHintsWhenTypeMatchesName = true, -- false
+      --       },
+      --     },
+      --     javascript = {
+      --       format = {
+      --         indentSize = vim.o.shiftwidth,
+      --         convertTabsToSpaces = vim.o.expandtab,
+      --         tabSize = vim.o.tabstop,
+      --       },
+      --       inlayHints = {
+      --         includeInlayEnumMemberValueHints = true,
+      --         includeInlayFunctionLikeReturnTypeHints = true,
+      --         includeInlayFunctionParameterTypeHints = true,
+      --         includeInlayParameterNameHints = "all",
+      --         includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+      --         includeInlayPropertyDeclarationTypeHints = true,
+      --         includeInlayVariableTypeHints = true,
+      --         includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+      --       },
+      --     },
+      --     completions = {
+      --       completeFunctionCalls = true,
+      --     },
+      --   },
+      -- },
     },
   },
 }
