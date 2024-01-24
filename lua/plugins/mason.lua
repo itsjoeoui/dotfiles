@@ -4,7 +4,7 @@ return {
     ensure_installed = {
       "stylua",
       "shellcheck",
-      -- "typescript-language-server",
+      "typescript-language-server",
       "astro-language-server",
       "shfmt",
       "black",
