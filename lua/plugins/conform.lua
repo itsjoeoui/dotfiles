@@ -1,6 +1,11 @@
 return {
   "stevearc/conform.nvim",
   opts = {
+    formatters = {
+      sql = {
+        args = { "fix", "--force", "--dialect=postgres", "-" },
+      },
+    },
     formatters_by_ft = {
       lua = { "stylua" },
       clojure = { "cljstyle" },
@@ -28,8 +33,10 @@ return {
 
       markdown = { "prettierd", "prettier" },
 
-      -- Use the "*" filetype to run formatters on all filetypes.
-      ["*"] = { "codespell" },
+      java = { "google-java-format" },
+
+      sql = { "prettierd" },
+      -- Use the "*" filetype to run formatters on all filetypes. ["*"] = { "codespell" },
 
       -- Use the "_" filetype to run formatters on filetypes that don't
       -- have other formatters configured.
