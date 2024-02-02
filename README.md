@@ -1,0 +1,3 @@
+# dotfiles
+
+My personal dotfiles for neovim, tmux, zsh, homebrew, and more...
