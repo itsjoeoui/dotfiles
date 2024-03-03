@@ -21,7 +21,9 @@ return {
       },
       pyright = {},
       ruff_lsp = {},
-      clangd = {},
+      clangd = {
+        filetypes = { "c", "cpp" },
+      },
       -- tsserver = {
       --   settings = {
       --     typescript = {

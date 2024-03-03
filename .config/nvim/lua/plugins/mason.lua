@@ -21,6 +21,8 @@ return {
       "vue-language-server",
       "zls",
       "templ",
+      "buf",
+      "buf-language-server",
     },
   },
 }
