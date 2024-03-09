@@ -1,4 +1,6 @@
-return {}
+return {
+  "dmmulroy/ts-error-translator.nvim",
+}
 -- return {
 --   "pmizio/typescript-tools.nvim",
 --   dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },

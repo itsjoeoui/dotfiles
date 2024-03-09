@@ -19,6 +19,7 @@ return {
           workingDirectory = { mode = "auto" },
         },
       },
+      gopls = {},
       pyright = {},
       ruff_lsp = {},
       clangd = {
