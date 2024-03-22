@@ -27,6 +27,8 @@ return {
       "astro",
       "clojure",
       "vue",
+      "gleam",
+      "elixir",
     },
   },
 }

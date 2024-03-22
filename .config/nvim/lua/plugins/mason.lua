@@ -23,6 +23,8 @@ return {
       "templ",
       "buf",
       "buf-language-server",
+      "gleam",
+      "elixir-ls",
     },
   },
 }

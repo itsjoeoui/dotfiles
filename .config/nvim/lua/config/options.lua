@@ -4,3 +4,4 @@
 
 local opt = vim.opt
 opt.colorcolumn = "80"
+vim.g.root_spec = { "cwd" }

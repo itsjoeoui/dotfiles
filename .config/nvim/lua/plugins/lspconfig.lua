@@ -25,6 +25,7 @@ return {
       clangd = {
         filetypes = { "c", "cpp" },
       },
+      gleam = {},
       -- tsserver = {
       --   settings = {
       --     typescript = {
