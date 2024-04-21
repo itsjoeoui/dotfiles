@@ -212,12 +212,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 
-# Created by `pipx` on 2023-11-17 02:28:59
-export PATH="$PATH:/Users/itsjoeoui/.local/bin"
-
-# Created by `pipx` on 2023-11-17 02:29:05
-export PATH="$PATH:/Users/itsjoeoui/Library/Python/3.11/bin"
-
 # bit
 case ":$PATH:" in
   *":/Users/itsjoeoui/bin:"*) ;;
