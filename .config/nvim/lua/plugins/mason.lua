@@ -25,6 +25,7 @@ return {
       "buf-language-server",
       "gleam",
       "elixir-ls",
+      "terraform-ls",
     },
   },
 }
