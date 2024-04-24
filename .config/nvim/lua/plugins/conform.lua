@@ -37,6 +37,8 @@ return {
 
       sql = { "prettierd" },
 
+      terraform = { "terraform_fmt" },
+
       proto = { "buf" },
 
       gleam = { "gleam" },
