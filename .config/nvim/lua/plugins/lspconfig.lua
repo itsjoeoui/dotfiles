@@ -21,6 +21,7 @@ return {
       },
       gopls = {},
       pyright = {},
+      basedpyright = {},
       ruff_lsp = {},
       clangd = {
         filetypes = { "c", "cpp" },

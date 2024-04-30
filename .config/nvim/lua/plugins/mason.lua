@@ -9,6 +9,7 @@ return {
       "shfmt",
       "black",
       "pyright",
+      "basedpyright",
       "gopls",
       "json-lsp",
       "lua-language-server",
