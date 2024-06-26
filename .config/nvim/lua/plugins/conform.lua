@@ -11,7 +11,7 @@ return {
       clojure = { "cljstyle" },
 
       -- Conform will run multiple formatters sequentially
-      python = { "isort", "black" },
+      python = { "ruff_format", "ruff_fix" },
 
       -- Use a sub-list to run only the first available formatter
       javascript = { { "prettierd", "prettier" } },
