@@ -19,12 +19,12 @@ return {
       typescript = { { "prettierd", "prettier" } },
       typescriptreact = { { "prettierd", "prettier" } },
       vue = { { "prettierd", "prettier" } },
-
       html = { { "prettierd", "prettier" } },
 
       astro = { { "prettier" } },
 
       go = { "goimports", "gofumpt" },
+
       templ = { "templ" },
       rust = { "rustfmt" },
 
@@ -43,7 +43,7 @@ return {
 
       gleam = { "gleam" },
       elixir = { "mix" },
-      ruby = { "rubocop" },
+
       -- Use the "*" filetype to run formatters on all filetypes. ["*"] = { "codespell" },
 
       -- Use the "_" filetype to run formatters on filetypes that don't
