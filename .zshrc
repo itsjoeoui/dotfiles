@@ -133,7 +133,9 @@ export PATH="$HOME/Workspace/go/bin:$PATH"
 # Java
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+if type "jenv" > /dev/null; then
+  eval "$(jenv init -)"
+fi
 
 # SDKMan
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
@@ -141,7 +143,9 @@ eval "$(jenv init -)"
 # [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # Ocaml
-eval $(opam config env)
+if type "opa " > /dev/null; then
+  eval $(opam config env)
+fi
 
 # McGill
 # alias jetuml="jenv shell temurin64-17.0.5 && j 303 && java --module-path javafx-sdk-19/lib --add-modules=javafx.controls,javafx.swing,java.desktop,java.prefs -jar JetUML-3.5.jar"
