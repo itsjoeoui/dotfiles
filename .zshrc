@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -121,56 +121,39 @@ alias top="gotop -s"
 alias ta="tmux attach"
 alias bruh="brew update && brew upgrade && brew cleanup && brew autoremove"
 
-alias mcgill="ssh xyu62@mimi.cs.mcgill.ca"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 eval "$(zoxide init zsh)"
 
+# Golang
 export GOPATH="$HOME/Workspace/go"
 export PATH="$HOME/Workspace/go/bin:$PATH"
+
+# Java
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-
-eval $(opam config env)
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
-alias jetuml="jenv shell temurin64-17.0.5 && j 303 && java --module-path javafx-sdk-19/lib --add-modules=javafx.controls,javafx.swing,java.desktop,java.prefs -jar JetUML-3.5.jar"
+# SDKMan
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# export SDKMAN_DIR="$HOME/.sdkman"
+# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# Ocaml
+eval $(opam config env)
 
+# McGill
+# alias jetuml="jenv shell temurin64-17.0.5 && j 303 && java --module-path javafx-sdk-19/lib --add-modules=javafx.controls,javafx.swing,java.desktop,java.prefs -jar JetUML-3.5.jar"
 alias mars="java -jar /Applications/Mars.jar"
 
-# pnpm
-export PNPM_HOME="/Users/itsjoeoui/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export PATH="$PATH:$HOME/.ghcup/bin/"
-
-alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
-alias nvim-kick="NVIM_APPNAME=kickstart nvim"
-alias nvim-chad="NVIM_APPNAME=NvChad nvim"
-alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
-
-function nvims() {
-  items=("default" "kickstart" "LazyVim" "NvChad" "AstroNvim")
-  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
-  if [[ -z $config ]]; then
-    echo "Nothing selected"
-    return 0
-  elif [[ $config == "default" ]]; then
-    config=""
-  fi
-  NVIM_APPNAME=$config nvim $@
-}
-export PATH=$PATH:/Users/itsjoeoui/.pixi/bin
-
+# Python
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -186,48 +169,38 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-# >>> mamba initialize >>>
-# !! Contents within this block are managed by 'mamba init' !!
-export MAMBA_EXE='/opt/homebrew/bin/micromamba';
-export MAMBA_ROOT_PREFIX='/Users/itsjoeoui/micromamba';
-__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__mamba_setup"
-else
-    alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
-fi
-unset __mamba_setup
-# <<< mamba initialize <<<
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-
-# bit
-case ":$PATH:" in
-  *":/Users/itsjoeoui/bin:"*) ;;
-  *) export PATH="$PATH:/Users/itsjoeoui/bin" ;;
-esac
-# bit end
+# Node.js
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
-PATH=~/.console-ninja/.bin:$PATH
+# Haskell
+# export PATH="$PATH:$HOME/.ghcup/bin/"
 
+# alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
+# alias nvim-kick="NVIM_APPNAME=kickstart nvim"
+# alias nvim-chad="NVIM_APPNAME=NvChad nvim"
+# alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
+#
+# function nvims() {
+#   items=("default" "kickstart" "LazyVim" "NvChad" "AstroNvim")
+#   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+#   if [[ -z $config ]]; then
+#     echo "Nothing selected"
+#     return 0
+#   elif [[ $config == "default" ]]; then
+#     config=""
+#   fi
+#   NVIM_APPNAME=$config nvim $@
+# }
+
+# Ruby
 if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
   export PATH=/opt/homebrew/opt/ruby/bin:$PATH
   export PATH=`gem environment gemdir`/bin:$PATH
 fi
 
+
+# ZSH
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-
 source /opt/homebrew/opt/spaceship/spaceship.zsh
