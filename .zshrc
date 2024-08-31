@@ -15,7 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship-prompt/spaceship"
+# ZSH_THEME="spaceship-prompt/spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -80,8 +80,6 @@ ZSH_THEME="spaceship-prompt/spaceship"
 plugins=(
     git
     colored-man-pages
-    zsh-autosuggestions
-    zsh-syntax-highlighting
     direnv
 )
 
@@ -229,3 +227,7 @@ if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
   export PATH=`gem environment gemdir`/bin:$PATH
 fi
 
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
+source /opt/homebrew/opt/spaceship/spaceship.zsh
