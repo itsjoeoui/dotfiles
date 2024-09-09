@@ -143,7 +143,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # Ocaml
-if type "opa " > /dev/null; then
+if type "opam" > /dev/null; then
   eval $(opam config env)
 fi
 
@@ -207,3 +207,22 @@ fi
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source /opt/homebrew/opt/spaceship/spaceship.zsh
+
+# Wealthsimple
+if [ -d "$HOME/.config/wealthsimple/" ]; then
+  source /Users/joey.yu/.config/wealthsimple/env.secrets
+  source /Users/joey.yu/.config/wealthsimple/rbenv/config.zsh
+  source /Users/joey.yu/.config/wealthsimple/direnv/config.zsh
+  source /Users/joey.yu/.config/wealthsimple/nvm/config.zsh
+  eval "$(ws hook zsh)"
+
+  # Android
+  export ANDROID_HOME=$HOME/Library/Android/sdk
+  export PATH=$PATH:$ANDROID_HOME/emulator
+  export PATH=$PATH:$ANDROID_HOME/tools
+  export PATH=$PATH:$ANDROID_HOME/tools/bin
+  export PATH=$PATH:$ANDROID_HOME/platform-tools
+fi
+
+# Created by `pipx` on 2024-09-03 19:06:29
+export PATH="$PATH:$HOME/.local/bin"
