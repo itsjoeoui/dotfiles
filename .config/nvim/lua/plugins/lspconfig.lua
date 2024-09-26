@@ -7,7 +7,7 @@ return {
   "neovim/nvim-lspconfig",
   opts = {
     inlay_hints = {
-      enabled = true,
+      enabled = false,
     },
     servers = {
       tailwindcss = {
@@ -23,6 +23,10 @@ return {
       },
       tsserver = {
         root_dir = get_root_dir,
+      },
+      ruby_lsp = {
+        mason = false,
+        cmd = { vim.fn.expand("~/.rbenv/shims/ruby-lsp") },
       },
     },
   },
