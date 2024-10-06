@@ -2,6 +2,7 @@
   "extras": [
     "lazyvim.plugins.extras.coding.copilot",
     "lazyvim.plugins.extras.coding.copilot-chat",
+    "lazyvim.plugins.extras.coding.luasnip",
     "lazyvim.plugins.extras.coding.neogen",
     "lazyvim.plugins.extras.coding.yanky",
     "lazyvim.plugins.extras.editor.dial",
@@ -23,6 +24,7 @@
     "lazyvim.plugins.extras.lang.go",
     "lazyvim.plugins.extras.lang.java",
     "lazyvim.plugins.extras.lang.json",
+    "lazyvim.plugins.extras.lang.kotlin",
     "lazyvim.plugins.extras.lang.markdown",
     "lazyvim.plugins.extras.lang.python",
     "lazyvim.plugins.extras.lang.r",
@@ -38,6 +40,7 @@
     "lazyvim.plugins.extras.lang.yaml",
     "lazyvim.plugins.extras.linting.eslint",
     "lazyvim.plugins.extras.test.core",
+    "lazyvim.plugins.extras.ui.mini-indentscope",
     "lazyvim.plugins.extras.ui.treesitter-context",
     "lazyvim.plugins.extras.util.chezmoi",
     "lazyvim.plugins.extras.util.dot",
