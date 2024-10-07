@@ -31,6 +31,10 @@ return {
         mason = false,
         cmd = { vim.fn.expand("~/.rbenv/shims/ruby-lsp") },
       },
+      rubocop = {
+        mason = false,
+        cmd = { vim.fn.expand("~/.rbenv/shims/rubocop"), "--lsp" },
+      },
     },
   },
 }

@@ -7,3 +7,6 @@ opt.colorcolumn = "80"
 vim.g.root_spec = { "cwd" }
 
 opt.smartcase = false
+
+vim.g.lazyvim_ruby_lsp = "ruby_lsp"
+vim.g.lazyvim_ruby_formatter = "rubocop"

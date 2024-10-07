@@ -20,5 +20,12 @@ return {
       -- have other formatters configured.
       ["*"] = { "trim_whitespace" },
     },
+    formatters = {
+      rubocop = {
+        command = require("conform.util").find_executable({
+          "~/.rbenv/shims/rubocop",
+        }, "rubocop"),
+      },
+    },
   },
 }
