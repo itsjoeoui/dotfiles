@@ -10,6 +10,9 @@ return {
       enabled = false,
     },
     servers = {
+      html = {
+        filetypes = { "html", "eruby" },
+      },
       tailwindcss = {
         filetypes = { "templ" },
         init_options = {
