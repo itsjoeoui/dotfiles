@@ -35,6 +35,10 @@ return {
         mason = false,
         cmd = { vim.fn.expand("~/.rbenv/shims/rubocop"), "--lsp" },
       },
+      clangd = {
+        -- NOTE: need this to exclude .proto
+        filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "hpp" },
+      },
     },
   },
 }
