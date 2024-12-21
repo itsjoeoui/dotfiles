@@ -74,8 +74,6 @@ cask "1password"
 cask "1password-cli"
 # Stand alone ad blocker
 cask "adguard"
-# Calendar and task manager
-cask "amie"
 # Chromium based browser
 cask "arc"
 # OpenAI's official ChatGPT desktop app
@@ -91,8 +89,6 @@ cask "jetbrains-toolbox"
 cask "karabiner-elements"
 # Email client
 cask "microsoft-outlook"
-# App to write, plan, collaborate, and get organised
-cask "notion"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # Replacement for Docker Desktop
@@ -103,5 +99,7 @@ cask "raycast"
 cask "setapp"
 # Music streaming service
 cask "spotify"
+# To-do & task list manager
+cask "ticktick"
 # Open-source code editor
 cask "visual-studio-code"
