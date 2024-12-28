@@ -4,6 +4,7 @@ tap "fsouza/prettierd"
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "virtuslab/scala-cli"
+tap "brewforge/extras"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Load/unload environment variables based on $PWD
@@ -68,6 +69,8 @@ brew "zsh-fast-syntax-highlighting"
 brew "ariga/tap/atlas"
 # Launcher for ScalaCli
 brew "virtuslab/scala-cli/scala-cli"
+# LyricsX
+brew "brewforge/extras/lyricsx-mxiris"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line interface for 1Password
