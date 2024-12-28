@@ -226,3 +226,6 @@ fi
 
 # Created by `pipx` on 2024-09-03 19:06:29
 export PATH="$PATH:$HOME/.local/bin"
+
+# Added by `rbenv init` on Tue 24 Dec 2024 20:09:23 EST
+eval "$(rbenv init - --no-rehash zsh)"
