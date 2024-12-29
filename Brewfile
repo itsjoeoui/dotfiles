@@ -45,8 +45,6 @@ brew "python@3.12"
 brew "rbenv"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Powerful, clean, object-oriented scripting language
-brew "ruby"
 # Safe, concurrent, practical language
 brew "rust"
 # Create beautiful image of your source code
@@ -69,8 +67,6 @@ brew "zsh-fast-syntax-highlighting"
 brew "ariga/tap/atlas"
 # Launcher for ScalaCli
 brew "virtuslab/scala-cli/scala-cli"
-# LyricsX
-brew "brewforge/extras/lyricsx-mxiris"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line interface for 1Password
@@ -106,3 +102,5 @@ cask "spotify"
 cask "ticktick"
 # Open-source code editor
 cask "visual-studio-code"
+# LyricsX
+cask "brewforge/extras/lyricsx-mxiris"
