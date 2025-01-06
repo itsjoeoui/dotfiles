@@ -734,7 +734,7 @@ mouse = "Middle"
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 
-[shell]
+[terminal.shell]
 args = ["--login"]
 program = "/bin/zsh"
 
@@ -752,3 +752,5 @@ option_as_alt = "both"
 [window.padding]
 x = 2
 y = 2
+
+[terminal]
