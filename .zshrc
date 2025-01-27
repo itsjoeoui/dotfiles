@@ -206,7 +206,8 @@ fi
 # ZSH
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source /opt/homebrew/opt/spaceship/spaceship.zsh
+source $(brew --prefix)/share/zsh-vi-mode/zsh-vi-mode.zsh
+eval "$(starship init zsh)"
 
 # Wealthsimple
 # if [ -d "$HOME/.config/wealthsimple/" ]; then
