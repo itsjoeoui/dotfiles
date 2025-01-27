@@ -7,3 +7,4 @@ font-thicken = true
 font-family = "CaskaydiaCove NF"
 bold-is-bright = true
 # command = sh -c 'exec /opt/homebrew/bin/tmux attach || exec /opt/homebrew/bin/tmux'
+macos-option-as-alt = left
