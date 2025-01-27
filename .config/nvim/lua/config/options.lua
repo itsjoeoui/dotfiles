@@ -12,3 +12,5 @@ vim.g.lazyvim_ruby_lsp = "ruby_lsp"
 vim.g.lazyvim_ruby_formatter = "rubocop"
 
 vim.g.snacks_animate = false
+
+vim.o.statuscolumn = "%s %l %r"
