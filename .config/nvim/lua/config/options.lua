@@ -14,3 +14,5 @@ vim.g.lazyvim_ruby_formatter = "rubocop"
 vim.g.snacks_animate = false
 
 vim.o.statuscolumn = "%s %l %r"
+
+vim.g.lazyvim_python_lsp = "basedpyright"
