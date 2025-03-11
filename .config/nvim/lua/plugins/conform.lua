@@ -8,6 +8,7 @@ return {
       typescript = { "prettierd", "prettier", stop_after_first = true },
       typescriptreact = { "prettierd", "prettier", stop_after_first = true },
       json = { "prettierd", "prettier", stop_after_first = true },
+      ejson = { "jq" },
       markdown = { "prettierd", "prettier", stop_after_first = true },
 
       templ = { "templ" },
