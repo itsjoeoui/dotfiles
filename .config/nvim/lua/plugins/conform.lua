@@ -10,7 +10,7 @@ return {
       json = { "prettierd", "prettier", stop_after_first = true },
       ejson = { "jq" },
       markdown = { "prettierd", "prettier", stop_after_first = true },
-
+      go = { "goimports", "gofumpt" },
       templ = { "templ" },
 
       proto = { "buf" },
