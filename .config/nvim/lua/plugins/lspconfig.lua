@@ -39,6 +39,18 @@ return {
         -- NOTE: need this to exclude .proto
         filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "hpp" },
       },
+      golangci_lint_ls = {
+        init_options = {
+          command = {
+            "golangci-lint",
+            "run",
+            "--output.json.path",
+            "stdout",
+            "--show-stats=false",
+            "--issues-exit-code=1",
+          },
+        },
+      },
     },
   },
 }
