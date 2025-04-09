@@ -223,10 +223,16 @@ eval "$(starship init zsh)"
 # Created by `pipx` on 2024-09-03 19:06:29
 export PATH="$PATH:$HOME/.local/bin"
 
+# Shopify
 if [ $(hostname) = "Joeys-Shopify-MacBook-Pro.local" ]; then
   [[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
 
   [[ -f /opt/dev/sh/chruby/chruby.sh ]] && { type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; } }
 
   [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+
+  # cloudplatform: add Shopify clusters to your local kubernetes config
+  export KUBECONFIG=${KUBECONFIG:+$KUBECONFIG:}/Users/itsjoeoui/.kube/config:/Users/itsjoeoui/.kube/config.shopify.cloudplatform
+  for file in /Users/itsjoeoui/src/github.com/Shopify/cloudplatform/workflow-utils/*.bash; do source ${file}; done
+  kubectl-short-aliases
 fi
