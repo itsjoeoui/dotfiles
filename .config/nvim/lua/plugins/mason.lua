@@ -7,7 +7,6 @@ return {
       "eslint_d",
       "templ",
       "buf",
-      "buf-language-server",
     },
   },
 }
