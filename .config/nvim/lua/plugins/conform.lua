@@ -14,6 +14,8 @@ return {
       templ = { "templ" },
 
       proto = { "buf" },
+      c = { "clang_format" },
+      cpp = { "clang_format" },
 
       -- Use the "*" filetype to run formatters on all filetypes. ["*"] = { "codespell" },
 
