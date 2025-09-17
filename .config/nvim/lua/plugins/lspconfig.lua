@@ -10,6 +10,7 @@ return {
       enabled = true,
     },
     servers = {
+      relay_lsp = {},
       html = {
         filetypes = { "html", "eruby" },
       },
