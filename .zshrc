@@ -120,6 +120,7 @@ alias p="pnpm"
 alias top="gotop -s"
 alias ta="tmux attach"
 alias bruh="brew update && brew upgrade && brew cleanup && brew autoremove"
+alias k="kubectl"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -229,4 +230,10 @@ if [ $(hostname) = "Joeys-Shopify-MacBook-Pro.local" ]; then
   [[ -f /opt/dev/sh/chruby/chruby.sh ]] && { type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; } }
 
   [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+
+  # cloudplatform: add Shopify clusters to your local kubernetes config
+  export KUBECONFIG=${KUBECONFIG:+$KUBECONFIG:}/Users/itsjoeoui/.kube/config:/Users/itsjoeoui/.kube/config.shopify.cloudplatform
+  for file in /Users/itsjoeoui/src/github.com/shopify/cloudplatform/workflow-utils/*.bash; do source ${file}; done
+  kubectl-short-aliases
 fi
+
