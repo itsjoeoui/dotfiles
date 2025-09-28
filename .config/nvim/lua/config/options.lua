@@ -16,3 +16,5 @@ vim.g.snacks_animate = false
 vim.o.statuscolumn = "%s %l %r"
 
 vim.g.lazyvim_python_lsp = "basedpyright"
+
+vim.g.ai_cmp = true

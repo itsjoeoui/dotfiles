@@ -16,6 +16,7 @@ return {
       proto = { "buf" },
       c = { "clang_format" },
       cpp = { "clang_format" },
+      java = { "google-java-format" },
 
       -- Use the "*" filetype to run formatters on all filetypes. ["*"] = { "codespell" },
 
