@@ -122,6 +122,9 @@ alias top="gotop -s"
 alias ta="tmux attach"
 alias bruh="brew update && brew upgrade && brew cleanup && brew autoremove"
 alias k="kubectl"
+alias y="yazi"
+
+export EDITOR="nvim"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
