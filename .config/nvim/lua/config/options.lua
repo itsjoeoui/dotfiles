@@ -4,17 +4,14 @@
 
 local opt = vim.opt
 opt.colorcolumn = "80"
-vim.g.root_spec = { "cwd" }
-
 opt.smartcase = false
 
-vim.g.lazyvim_ruby_lsp = "ruby_lsp"
-vim.g.lazyvim_ruby_formatter = "rubocop"
-
+vim.g.root_spec = { "lsp", "cwd" }
 vim.g.snacks_animate = false
-
 vim.o.statuscolumn = "%s %l %r"
-
 vim.g.lazyvim_python_lsp = "basedpyright"
-
 vim.g.ai_cmp = true
+
+vim.lsp.config("jdtls", {
+  root_markers = { "gradlew", "mvnw" },
+})
