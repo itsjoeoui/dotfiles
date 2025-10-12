@@ -246,4 +246,4 @@ fi
 
 
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
-
+eval $(thefuck --alias)
