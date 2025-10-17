@@ -228,7 +228,7 @@ eval "$(starship init zsh)"
 # Created by `pipx` on 2024-09-03 19:06:29
 export PATH="$PATH:$HOME/.local/bin"
 
-if [ $(hostname) = "JoeysShopifyMBP" ] || [ $(hostname) = "Joeys-Shopify-MacBook-Pro.local" ]; then
+if [ -d ~/.config/dev ]; then
   [[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
 
   [[ -f /opt/dev/sh/chruby/chruby.sh ]] && { type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; } }
