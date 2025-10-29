@@ -13,7 +13,7 @@ return {
 
       markdown = { "prettierd", "prettier", stop_after_first = true },
 
-      go = { "gofumpt" },
+      go = {},
       templ = { "templ" },
 
       proto = { "buf" },
