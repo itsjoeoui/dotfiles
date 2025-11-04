@@ -8,8 +8,13 @@ return {
         enabled = true,
       },
       tools = {
-        shopify = {
+        shopify_claude = {
           cmd = { "/opt/dev/bin/dev", "tools", "run", "claude" },
+          url = "https://shopify.com",
+          keys = {},
+        },
+        shopify_codex = {
+          cmd = { "/opt/dev/bin/dev", "tools", "run", "codex" },
           url = "https://shopify.com",
           keys = {},
         },
