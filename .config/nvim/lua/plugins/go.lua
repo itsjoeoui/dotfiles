@@ -18,6 +18,9 @@ return {
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = "*.go",
       callback = function()
+        if not LazyVim.format.enabled() then
+          return
+        end
         require("go.format").goimports()
       end,
       group = format_sync_grp,
