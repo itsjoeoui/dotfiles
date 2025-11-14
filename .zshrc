@@ -247,3 +247,5 @@ fi
 
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 eval $(thefuck --alias)
+
+export XDG_CONFIG_HOME="$HOME/.config"
