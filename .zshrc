@@ -132,8 +132,8 @@ export EDITOR="nvim"
 eval "$(zoxide init zsh)"
 
 # Golang
-export GOPATH="$HOME/Workspace/go"
-export PATH="$HOME/Workspace/go/bin:$PATH"
+export GOPATH="$HOME/src/go"
+export PATH="$HOME/src/go/bin:$PATH"
 
 # Java
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
