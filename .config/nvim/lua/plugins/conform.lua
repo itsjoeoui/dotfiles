@@ -16,6 +16,8 @@ return {
       go = {},
       templ = { "templ" },
 
+      rust = { "rustfmt" },
+
       proto = { "buf" },
       c = { "clang_format" },
       cpp = { "clang_format" },
