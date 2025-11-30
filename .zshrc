@@ -123,6 +123,7 @@ alias ta="tmux attach"
 alias bruh="brew update && brew upgrade && brew cleanup && brew autoremove"
 alias k="kubectl"
 alias y="yazi"
+alias lg="lazygit"
 
 export EDITOR="nvim"
 
