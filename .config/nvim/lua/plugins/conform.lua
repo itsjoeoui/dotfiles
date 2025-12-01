@@ -23,6 +23,7 @@ return {
       cpp = { "clang_format" },
 
       java = { "google-java-format" },
+      ocaml = { "ocamlformat" },
 
       -- Use the "*" filetype to run formatters on all filetypes. ["*"] = { "codespell" },
 
