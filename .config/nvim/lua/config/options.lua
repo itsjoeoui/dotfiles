@@ -6,7 +6,8 @@ local opt = vim.opt
 opt.colorcolumn = "80"
 opt.smartcase = false
 
-vim.g.root_spec = { "lsp", "cwd" }
+-- vim.g.root_spec = { "lsp", "cwd" }
+vim.g.root_spec = { "cwd" }
 vim.g.snacks_animate = false
 vim.o.statuscolumn = "%s %l %r"
 vim.g.lazyvim_python_lsp = "basedpyright"
