@@ -13,6 +13,11 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
+map("n", "<leader>jj", function()
+  -- Opens jjui in a floating terminal, rooted in your project directory
+  Snacks.terminal("jjui", { cwd = LazyVim.root() })
+end, { desc = "Jujutsu UI" })
+
 map("x", "<leader>p", [["_dp]])
 
 map("i", "<A-j>", "j")
