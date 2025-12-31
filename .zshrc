@@ -125,6 +125,15 @@ alias k="kubectl"
 alias y="yazi"
 alias lg="lazygit"
 
+alias -s go="$EDITOR"
+alias -s json="$EDITOR"
+alias -s yaml="$EDITOR"
+alias -g NE='2>/dev/null'
+alias -g JQ='| jq'
+alias -g C='| pbcopy'
+
+autoload zmv
+
 export EDITOR="nvim"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -250,3 +259,10 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 eval $(thefuck --alias)
 
 export XDG_CONFIG_HOME="$HOME/.config"
+
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
+bindkey ' ' magic-space
+
+eval "$(mise activate zsh)"
