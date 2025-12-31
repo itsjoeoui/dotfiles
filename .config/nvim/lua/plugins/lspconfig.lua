@@ -9,10 +9,10 @@ return {
     servers = {
       relay_lsp = {},
       eslint = {
-        root_dir = get_root_dir,
+        -- root_dir = get_root_dir,
       },
       tsserver = {
-        root_dir = get_root_dir,
+        -- root_dir = get_root_dir,
       },
     },
   },
