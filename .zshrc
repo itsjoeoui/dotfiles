@@ -183,9 +183,9 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# Node.js
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+# # Node.js
+# export VOLTA_HOME="$HOME/.volta"
+# export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Haskell
 # export PATH="$PATH:$HOME/.ghcup/bin/"
