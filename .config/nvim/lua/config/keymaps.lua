@@ -18,6 +18,11 @@ map("n", "<leader>jj", function()
   Snacks.terminal("jjui", { cwd = LazyVim.root() })
 end, { desc = "Jujutsu UI" })
 
+map("n", "<leader>dd", function()
+  -- Opens jjui in a floating terminal, rooted in your project directory
+  Snacks.terminal("uvx --from sqlit-tui --with psycopg2-binary sqlit", { cwd = LazyVim.root() })
+end, { desc = "sqlit" })
+
 map("x", "<leader>p", [["_dp]])
 
 map("i", "<A-j>", "j")
