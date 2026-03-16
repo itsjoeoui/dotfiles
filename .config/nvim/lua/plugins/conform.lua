@@ -1,42 +1,64 @@
 return {
   "stevearc/conform.nvim",
-  opts = {
-    formatters_by_ft = {
-      -- Use a sub-list to run only the first available formatter
-      javascript = { "prettierd", "prettier", stop_after_first = true },
-      javascriptreact = { "prettierd", "prettier", stop_after_first = true },
-      typescript = { "prettierd", "prettier", stop_after_first = true },
-      typescriptreact = { "prettierd", "prettier", stop_after_first = true },
+  opts = function()
+    -- Cache to avoid repeated file system searches
+    local formatter_cache = {}
 
-      json = { "jq" },
-      ejson = { "jq" },
+    local function select_js_ts_formatter(bufnr)
+      local root = vim.fs.root(bufnr, { ".git", "package.json" })
+      if not root then
+        return { "prettierd", "prettier", stop_after_first = true }
+      end
 
-      markdown = { "prettierd", "prettier", stop_after_first = true },
+      -- Check cache first
+      if formatter_cache[root] then
+        return formatter_cache[root]
+      end
 
-      go = {},
-      templ = { "templ" },
+      -- Check for oxc config
+      local has_oxc = vim.fs.find({ "oxlintrc.json", ".oxlintrc.json", "oxc.json" }, {
+        path = root,
+        upward = false,
+      })[1]
 
-      rust = { "rustfmt" },
+      local formatters
+      if has_oxc then
+        formatters = { "oxfmt" }
+      else
+        formatters = { "prettierd", "prettier", stop_after_first = true }
+      end
 
-      proto = { "buf" },
-      c = { "clang_format" },
-      cpp = { "clang_format" },
+      -- Cache the result
+      formatter_cache[root] = formatters
+      return formatters
+    end
 
-      java = { "google-java-format" },
-      ocaml = { "ocamlformat" },
+    return {
+      formatters_by_ft = {
+        javascript = select_js_ts_formatter,
+        javascriptreact = select_js_ts_formatter,
+        typescript = select_js_ts_formatter,
+        typescriptreact = select_js_ts_formatter,
 
-      -- Use the "*" filetype to run formatters on all filetypes. ["*"] = { "codespell" },
+        json = { "jq" },
+        ejson = { "jq" },
 
-      -- Use the "_" filetype to run formatters on filetypes that don't
-      -- have other formatters configured.
-      ["*"] = { "trim_whitespace", "codespell" },
-    },
-    -- formatters = {
-    --   rubocop = {
-    --     command = require("conform.util").find_executable({
-    --       "~/.rbenv/shims/rubocop",
-    --     }, "rubocop"),
-    --   },
-    -- },
-  },
+        markdown = { "prettierd", "prettier", stop_after_first = true },
+
+        go = {},
+        templ = { "templ" },
+
+        rust = { "rustfmt" },
+
+        proto = { "buf" },
+        c = { "clang_format" },
+        cpp = { "clang_format" },
+
+        java = { "google-java-format" },
+        ocaml = { "ocamlformat" },
+
+        ["*"] = { "trim_whitespace", "codespell" },
+      },
+    }
+  end,
 }
