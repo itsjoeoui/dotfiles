@@ -9,8 +9,8 @@ return {
     -- lsp_keymaps = false,
     -- other options
     goimports = "gopls", -- goimports command, can be gopls[default] or either goimports or golines if need to split long lines
-    gofmt = "golines", -- gofmt through gopls: alternative is gofumpt, goimports, golines, gofmt, etc
-    max_line_len = 80,
+    gofmt = "gopls", -- gofmt through gopls: alternative is gofumpt, goimports, golines, gofmt, etc
+    max_line_len = 120,
   },
   config = function(lp, opts)
     require("go").setup(opts)
