@@ -8,9 +8,11 @@ font-size = 16
 font-thicken = true
 font-family = "CaskaydiaCove NF"
 macos-option-as-alt = left
-auto-update-channel = tip
 
 notify-on-command-finish = always
 notify-on-command-finish-action = notify
 notify-on-command-finish-after = 5s
 
+
+keybind = alt+backspace=text:\x1b\x7f
+keybind = shift+enter=text:\n
