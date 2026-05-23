@@ -51,12 +51,15 @@ return {
         rust = { "rustfmt" },
 
         proto = { "buf" },
+        cmake = { "cmake_format" },
         c = { "clang_format" },
         cpp = { "clang_format" },
+        lua = { "stylua" },
 
         java = { "google-java-format" },
         ocaml = { "ocamlformat" },
 
+        python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
         ["*"] = { "trim_whitespace", "codespell" },
       },
     }
