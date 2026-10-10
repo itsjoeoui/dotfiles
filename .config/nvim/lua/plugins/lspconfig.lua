@@ -1,19 +1,11 @@
-local get_root_dir = function(fname)
-  local util = require("lspconfig.util")
-  return util.root_pattern(".git")(fname) or util.root_pattern("package.json", "tsconfig.json")(fname)
-end
-
 return {
   "neovim/nvim-lspconfig",
   opts = {
     servers = {
-      relay_lsp = {},
-      eslint = {
-        -- root_dir = get_root_dir,
-      },
-      tsserver = {
-        -- root_dir = get_root_dir,
-      },
+      -- Relay is project-local and has no Mason package.
+      relay_lsp = { mason = false },
+      tsgo = { enabled = false }, -- Avoid a second TypeScript server beside vtsls.
+      jsonls = { filetypes = { "json", "jsonc", "ejson" } },
     },
   },
 }

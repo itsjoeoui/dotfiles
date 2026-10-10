@@ -1,8 +1,16 @@
 return {
   "vuki656/package-info.nvim",
-  requires = "MunifTanjim/nui.nvim",
-  lazy = true,
-  config = function()
-    require("package-info").setup()
-  end,
+  dependencies = { "MunifTanjim/nui.nvim" },
+  event = { "BufReadPost package.json", "BufNewFile package.json" },
+  cmd = {
+    "PackageInfoShow",
+    "PackageInfoShowForce",
+    "PackageInfoHide",
+    "PackageInfoToggle",
+    "PackageInfoUpdate",
+    "PackageInfoDelete",
+    "PackageInfoInstall",
+    "PackageInfoChangeVersion",
+  },
+  opts = {},
 }

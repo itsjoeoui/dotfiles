@@ -16,11 +16,11 @@ return {
     { mode = "n", "<c-k>", "<cmd>TmuxNavigateUp<cr>" },
     { mode = "n", "<c-l>", "<cmd>TmuxNavigateRight<cr>" },
     { mode = "n", "<c-\\>", "<cmd>TmuxNavigatePrevious<cr>" },
-    { mode = "t", "<c-h>", "<C-w><cmd>TmuxNavigateLeft<cr>" },
-    { mode = "t", "<c-j>", "<C-w><cmd>TmuxNavigateDown<cr>" },
-    { mode = "t", "<c-k>", "<C-w><cmd>TmuxNavigateUp<cr>" },
-    { mode = "t", "<c-l>", "<C-w><cmd>TmuxNavigateRight<cr>" },
-    { mode = "t", "<c-\\>", "<C-w><cmd>TmuxNavigatePrevious<cr>" },
+    { mode = "t", "<c-h>", "<C-\\><C-n><cmd>TmuxNavigateLeft<cr>" },
+    { mode = "t", "<c-j>", "<C-\\><C-n><cmd>TmuxNavigateDown<cr>" },
+    { mode = "t", "<c-k>", "<C-\\><C-n><cmd>TmuxNavigateUp<cr>" },
+    { mode = "t", "<c-l>", "<C-\\><C-n><cmd>TmuxNavigateRight<cr>" },
+    { mode = "t", "<c-\\>", "<C-\\><C-n><cmd>TmuxNavigatePrevious<cr>" },
   },
   init = function()
     -- Disable default mappings to make it work in terminal mode

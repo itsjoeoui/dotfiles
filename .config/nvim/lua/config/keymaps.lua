@@ -18,8 +18,8 @@ map("n", "<leader>jj", function()
   Snacks.terminal("jjui", { cwd = LazyVim.root() })
 end, { desc = "Jujutsu UI" })
 
-map("n", "<leader>dd", function()
-  -- Opens jjui in a floating terminal, rooted in your project directory
+map("n", "<leader>D", function()
+  -- Opens sqlit in a floating terminal, rooted in your project directory
   Snacks.terminal("uvx --from sqlit-tui --with psycopg2-binary sqlit", { cwd = LazyVim.root() })
 end, { desc = "sqlit" })
 
@@ -29,8 +29,6 @@ map("i", "<A-j>", "j")
 map("i", "<A-k>", "k")
 map("v", "<A-j>", "j")
 map("v", "<A-k>", "k")
-map("n", "<A-j>", "j")
-map("n", "<A-k>", "k")
 
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
@@ -46,12 +44,7 @@ vim.keymap.set("n", "<A-h>", require("smart-splits").resize_left)
 vim.keymap.set("n", "<A-j>", require("smart-splits").resize_down)
 vim.keymap.set("n", "<A-k>", require("smart-splits").resize_up)
 vim.keymap.set("n", "<A-l>", require("smart-splits").resize_right)
--- moving between splits
-vim.keymap.set("n", "<C-h>", require("smart-splits").move_cursor_left)
-vim.keymap.set("n", "<C-j>", require("smart-splits").move_cursor_down)
-vim.keymap.set("n", "<C-k>", require("smart-splits").move_cursor_up)
-vim.keymap.set("n", "<C-l>", require("smart-splits").move_cursor_right)
-vim.keymap.set("n", "<C-\\>", require("smart-splits").move_cursor_previous)
+-- Ctrl+h/j/k/l and Ctrl+\ are owned by vim-tmux-navigator.
 -- swapping buffers between windows
 vim.keymap.set("n", "<leader><leader>h", require("smart-splits").swap_buf_left)
 vim.keymap.set("n", "<leader><leader>j", require("smart-splits").swap_buf_down)

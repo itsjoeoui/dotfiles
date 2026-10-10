@@ -10,9 +10,9 @@ opt.smartcase = false
 vim.g.root_spec = { "cwd" }
 vim.g.snacks_animate = false
 vim.o.statuscolumn = "%s %l %r"
-vim.g.lazyvim_python_lsp = "basedpyright"
+vim.g.lazyvim_python_lsp = "ty"
 vim.g.ai_cmp = true
 
 vim.lsp.config("jdtls", {
-  root_markers = { "gradlew", "mvnw" },
+  root_markers = { "gradlew", "mvnw", "pom.xml", "build.gradle", "build.gradle.kts", ".git" },
 })

@@ -1,2 +1,4 @@
 ; extends
-((inline) @_inline (#match? @_inline "^\(import\|export\)")) @tsx
+((inline) @injection.content
+  (#match? @injection.content "^\\(import\\|export\\)\\s")
+  (#set! injection.language "tsx"))
