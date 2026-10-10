@@ -21,8 +21,6 @@
         pruneTags = true
         all = true
 
-# why the hell not?
-
 [help]
         autocorrect = prompt
 [commit]
@@ -31,17 +29,13 @@
         enabled = true
         autoupdate = true
 [core]
-        excludesfile = ~/.gitignore
+        excludesfile = ~/.config/git/ignore
+        fsmonitor = true
+        untrackedCache = true
 [rebase]
         autoSquash = true
         autoStash = true
         updateRefs = true
-
-# a matter of taste (uncomment if you dare)
-
-[core]
-        fsmonitor = true
-        untrackedCache = true
 [merge]
         # (just 'diff3' if git version < 2.3)
         conflictstyle = zdiff3

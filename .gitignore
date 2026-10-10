@@ -6,3 +6,8 @@ debug
 foo.*
 *.log
 data
+
+# Generated machine-local files.
+.DS_Store
+.config/karabiner/automatic_backups/
+Brewfile.lock.json

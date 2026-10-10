@@ -15,4 +15,5 @@ notify-on-command-finish-after = 5s
 
 
 keybind = alt+backspace=text:\x1b\x7f
-keybind = shift+enter=text:\n
+
+keybind = shift+enter=text:\x1b\r

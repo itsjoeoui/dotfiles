@@ -1,9 +1,4 @@
-tap "1password/tap"
 tap "ariga/tap"
-tap "fsouza/prettierd"
-tap "homebrew/bundle"
-tap "homebrew/services"
-tap "virtuslab/scala-cli"
 tap "brewforge/extras"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
@@ -49,8 +44,6 @@ brew "ripgrep"
 brew "rust"
 # Create beautiful image of your source code
 brew "silicon"
-# Zsh prompt for Astronauts
-brew "spaceship"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
 # Terminal multiplexer
@@ -65,8 +58,20 @@ brew "zsh-autosuggestions"
 brew "zsh-fast-syntax-highlighting"
 # A database toolkit
 brew "ariga/tap/atlas"
-# Launcher for ScalaCli
-brew "virtuslab/scala-cli/scala-cli"
+# Tools used directly by the shell, Git and Neovim configuration.
+brew "difftastic"
+brew "gotop"
+brew "kubernetes-cli"
+brew "mise"
+brew "openjdk"
+brew "opam"
+brew "pnpm"
+brew "ruby"
+brew "starship"
+brew "thefuck"
+brew "tree-sitter-cli"
+brew "uv"
+brew "yazi"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line interface for 1Password
@@ -104,3 +109,6 @@ cask "ticktick"
 cask "visual-studio-code"
 # LyricsX
 cask "brewforge/extras/lyricsx-mxiris"
+
+# Current terminal.
+cask "ghostty"

@@ -18,13 +18,14 @@
                         ]
                     },
                     {
-                        "description": "Change command + h/j/k/l to Arrows",
+                        "description": "Change fn + h/j/k/l to Arrows",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
-                                        "mandatory": ["left_command"],
+                                        "mandatory": ["fn"],
                                         "optional": ["caps_lock"]
                                     }
                                 },
@@ -35,7 +36,7 @@
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
-                                        "mandatory": ["left_command"],
+                                        "mandatory": ["fn"],
                                         "optional": ["caps_lock"]
                                     }
                                 },
@@ -46,7 +47,7 @@
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
-                                        "mandatory": ["left_command"],
+                                        "mandatory": ["fn"],
                                         "optional": ["caps_lock"]
                                     }
                                 },
@@ -57,7 +58,7 @@
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": {
-                                        "mandatory": ["left_command"],
+                                        "mandatory": ["fn"],
                                         "optional": ["caps_lock"]
                                     }
                                 },
@@ -146,8 +147,24 @@
                     }
                 ]
             },
+            "devices": [
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 666,
+                        "vendor_id": 76
+                    },
+                    "treat_as_built_in_keyboard": true
+                }
+            ],
             "name": "Default profile",
             "selected": true,
+            "simple_modifications": [
+                {
+                    "from": { "apple_vendor_top_case_key_code": "keyboard_fn" },
+                    "to": [{ "key_code": "left_control" }]
+                }
+            ],
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         }
     ]
