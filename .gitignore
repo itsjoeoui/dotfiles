@@ -11,3 +11,8 @@ data
 .DS_Store
 .config/karabiner/automatic_backups/
 Brewfile.lock.json
+
+# Pi credentials and generated state stay machine-local.
+.pi/agent/auth.json
+.pi/agent/models-store.json
+.pi/agent/sessions/

@@ -34,6 +34,12 @@ Inside Neovim, run `:LazyHealth` and `:checkhealth nvim-treesitter`. Ghostty can
 
 Open a new terminal after changing `.zshrc`. Reload tmux configuration with `tmux source-file ~/.tmux.conf`. Ghostty's reload shortcut is `Cmd+Shift+,` on macOS. Karabiner detects configuration changes automatically.
 
+## Pi
+
+Pi preferences live in `.pi/agent/settings.json`, linked by Stow to `~/.pi/agent/settings.json`. Hardware cursor support is enabled with `"showHardwareCursor": true`, so plain `pi` works without `PI_HARDWARE_CURSOR=1`. Restart Pi after changing this cursor preference.
+
+Only configuration belongs in the repository; Pi credentials (`auth.json`), the model cache (`models-store.json`), and session history remain machine-local and are ignored by Git.
+
 ## Machine-local setup
 
 Zsh loads Shopify hooks only when `~/.config/dev` exists and the relevant scripts are installed. Work Kubernetes configuration paths are added once, and missing workflow scripts are skipped.
