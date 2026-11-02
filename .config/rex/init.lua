@@ -7,7 +7,7 @@ rex.bind("ctrl+a>shift+-", "pane.split", { direction = "down" })
 
 rex.bind("ctrl+a>z", "pane.zoom")
 rex.bind("ctrl+a>x", "pane.close")
-rex.bind("ctrl+a>q", "pane.close")
+rex.bind("ctrl+a>q", "client.close")
 
 rex.unbind("alt+cmd+left", "pane.focus.left")
 rex.unbind("alt+cmd+right", "pane.focus.right")
