@@ -11,6 +11,7 @@ cd ~/dotfiles
 brew bundle install --file=Brewfile
 stow --simulate --verbose --target="$HOME" .
 stow --target="$HOME" .
+mise install
 ```
 
 Keep machine-specific secrets and work configuration outside this repository. Karabiner's automatic backups and Homebrew lockfiles are ignored by Git.
@@ -21,18 +22,30 @@ For tmux plugins, install [TPM](https://github.com/tmux-plugins/tpm) into `~/.tm
 
 Neovim installs its plugins on first launch. Use `:Lazy` to manage plugins and `:Mason` for language tools. Python uses Ruff for linting/import cleanup/formatting and Astral's ty for type checking. TypeScript uses vtsls. The SQL terminal is on `<leader>D`; `<leader>cl` opens LSP information.
 
+## Runtime versions
+
+Mise is the default version manager for Node, Python, Ruby, Go, pnpm, Bun, uv and Just. Global defaults are tracked in `.config/mise/config.toml`; project `mise.toml`, `.tool-versions` and supported language version files override them. Run `mise install` after cloning or changing versions, and `mise use <tool>@<version>` inside a project to select its version. Homebrew manages shell utilities and applications. Existing Homebrew runtimes can remain installed as fallbacks or dependencies.
+
+Java tooling is no longer enabled by default. The conditional work `chruby` hook remains for scripts that explicitly require that command; mise does not impersonate other version-manager commands. Opam remains responsible for OCaml switches. `bruh` retains its existing Homebrew update/upgrade/cleanup behavior; update mise-managed defaults explicitly with `mise use --global <tool>@<version>` and commit the resulting config.
+
 ## Checks and reloads
 
 ```sh
-zsh -n .zshrc
-git diff --check
-stow --simulate --verbose --target="$HOME" .
-brew bundle check --file=Brewfile
+dotfiles-check
+dotfiles-check --packages
 ```
+
+The default checks validate syntax, Git whitespace, JSON/TOML/YAML, Stow conflicts, runtime availability and Ghostty configuration. `--packages` also checks the Brewfile for missing or outdated packages. Checks do not install packages or reload running applications. Before opening a new shell, run `python3 .local/bin/dotfiles-check` from this repository.
 
 Inside Neovim, run `:LazyHealth` and `:checkhealth nvim-treesitter`. Ghostty can validate its config with `/Applications/Ghostty.app/Contents/MacOS/ghostty +validate-config`.
 
 Open a new terminal after changing `.zshrc`. Reload tmux configuration with `tmux source-file ~/.tmux.conf`. Ghostty's reload shortcut is `Cmd+Shift+,` on macOS. Karabiner detects configuration changes automatically.
+
+## Rex
+
+Rex configuration lives in `.config/rex/init.lua`, linked by Stow to `~/.config/rex/init.lua`. It includes Ctrl+A tab/pane shortcuts, a pane-resize mode, and Ctrl+H/J/K/L navigation between Neovim and Rex panes.
+
+The Rex-side navigation helper is vendored in `.config/rex/vim-rex-navigator/` from [paul-enz/vim-rex-navigator](https://github.com/paul-enz/vim-rex-navigator), with its license retained. Neovim installs its matching plugin through Lazy in `.config/nvim/lua/plugins/rex.lua`. Rex application state and session data stay outside this repository.
 
 ## Pi
 

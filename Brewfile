@@ -12,14 +12,8 @@ brew "fd"
 brew "fzf"
 # GitHub command-line tool
 brew "gh"
-# Open source programming language to build simple/reliable/efficient software
-brew "go"
-# Manage your Java environment
-brew "jenv"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
-# Handy way to save and run project-specific commands
-brew "just"
 # Simple terminal UI for git commands
 brew "lazygit"
 # Clone of ls with colorful output, file type icons, and more
@@ -34,10 +28,6 @@ brew "nixpacks"
 brew "pipx"
 # Prettier daemon
 brew "prettierd"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.12"
-# Ruby version manager
-brew "rbenv"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Safe, concurrent, practical language
@@ -63,14 +53,11 @@ brew "difftastic"
 brew "gotop"
 brew "kubernetes-cli"
 brew "mise"
-brew "openjdk"
 brew "opam"
-brew "pnpm"
-brew "ruby"
 brew "starship"
 brew "thefuck"
 brew "tree-sitter-cli"
-brew "uv"
+brew "ouch"
 brew "yazi"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"

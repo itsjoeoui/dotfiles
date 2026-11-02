@@ -1,0 +1,14 @@
+# Personal defaults; project mise.toml and .tool-versions take precedence.
+[settings]
+idiomatic_version_file_enable_tools = ["node", "python", "ruby", "go"]
+
+[tools]
+node = "lts"
+python = "3.14.3"
+ruby = "4.0.7"
+go = "1.26.8"
+pnpm = "10.33.0"
+bun = "1.4.2"
+uv = "0.13.0"
+"github:casey/just" = "1.49.0"
+pi = "latest"

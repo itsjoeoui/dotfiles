@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+"""Validate dotfiles without installing packages or changing live configuration."""
+import argparse
+import json
+from pathlib import Path
+import subprocess
+import sys
+import tomllib
+
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--packages', action='store_true', help='also check Brewfile packages (may access the network)')
+args = parser.parse_args()
+root = Path(__file__).resolve().parents[2]
+failures = []
+
+def check(name, operation):
+    try:
+        operation()
+        print(f'OK: {name}', flush=True)
+    except (OSError, ValueError, subprocess.CalledProcessError) as error:
+        failures.append(name)
+        print(f'FAIL: {name}: {error}', file=sys.stderr, flush=True)
+
+def run(*command):
+    subprocess.run(command, cwd=root, check=True)
+
+check('Zsh syntax', lambda: run('zsh', '-n', str(root / '.zshrc')))
+check('Brewfile syntax', lambda: run('ruby', '-c', str(root / 'Brewfile')))
+check('Git whitespace', lambda: run('git', 'diff', '--check', 'HEAD'))
+check('Git configuration', lambda: subprocess.run(['git', 'config', '--file', str(root / '.config/git/config'), '--list'], check=True, stdout=subprocess.DEVNULL))
+for relative in ('.config/karabiner/karabiner.json', '.config/nvim/lazyvim.json', '.config/nvim/lazy-lock.json'):
+    check(relative, lambda relative=relative: json.loads((root / relative).read_text()))
+check('mise TOML', lambda: tomllib.loads((root / '.config/mise/config.toml').read_text()))
+check('LazyGit YAML', lambda: run('ruby', '-ryaml', '-e', 'YAML.load_file(ARGV.fetch(0))', str(root / '.config/lazygit/config.yml')))
+check('Stow conflicts', lambda: run('stow', '--simulate', '--verbose', f'--dir={root}', f'--target={Path.home()}', '.'))
+check('mise runtime availability', lambda: run('env', 'MISE_AUTO_INSTALL=false', 'MISE_EXEC_AUTO_INSTALL=false', 'mise', 'exec', '--', 'python', '-c', 'import shutil, sys; tools = ("node", "python", "ruby", "go", "pnpm", "bun", "uv", "just"); missing = [tool for tool in tools if not shutil.which(tool)]; print("Missing:", missing) if missing else None; sys.exit(bool(missing))'))
+ghostty = Path('/Applications/Ghostty.app/Contents/MacOS/ghostty')
+if ghostty.exists():
+    check('Ghostty configuration', lambda: run(str(ghostty), '+validate-config'))
+if args.packages:
+    check('Brewfile packages', lambda: run('brew', 'bundle', 'check', '--file', str(root / 'Brewfile')))
+if failures:
+    print(f'{len(failures)} check(s) failed.', file=sys.stderr)
+    sys.exit(1)
+print('All checks passed.')

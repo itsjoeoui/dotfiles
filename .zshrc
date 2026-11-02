@@ -40,7 +40,9 @@ alias bruh="brew update && brew upgrade && brew cleanup && brew autoremove"
 alias k="kubectl"
 alias y="yazi"
 alias lg="lazygit"
-alias mars="java -jar /Applications/Mars.jar"
+dotfiles-check() {
+  python3 "$HOME/dotfiles/.local/bin/dotfiles-check" "$@"
+}
 alias -s go="$EDITOR"
 alias -s json="$EDITOR"
 alias -s yaml="$EDITOR"
@@ -52,15 +54,7 @@ autoload -Uz zmv
 # Language environments.
 export GOPATH="$HOME/src/go"
 path=("$GOPATH/bin" $path)
-[[ -d "$_dotfiles_brew_prefix/opt/openjdk/bin" ]] && path=("$_dotfiles_brew_prefix/opt/openjdk/bin" $path)
-[[ -d "$HOME/.jenv/bin" ]] && path=("$HOME/.jenv/bin" $path)
-(( $+commands[jenv] )) && eval "$(jenv init -)"
 (( $+commands[opam] )) && eval "$(opam env --shell=zsh 2>/dev/null)"
-
-if [[ -d "$_dotfiles_brew_prefix/opt/ruby/bin" ]]; then
-  path=("$_dotfiles_brew_prefix/opt/ruby/bin" $path)
-  (( $+commands[gem] )) && path=("$(gem environment gemdir)/bin" $path)
-fi
 
 # Shopify's machine-local setup is optional and is not stored in this repository.
 if [[ -d "$XDG_CONFIG_HOME/dev" ]]; then
@@ -115,8 +109,10 @@ if [[ -o zle && -t 0 && -t 1 ]]; then
 
 fi
 
-# Keep Bun ahead of other runtimes, as in the original configuration.
-[[ -d "$HOME/.bun/bin" ]] && path=("$HOME/.bun/bin" $path)
+# Without mise, retain the standalone Bun installation as a fallback.
+if ! (( $+commands[mise] )) && [[ -d "$HOME/.bun/bin" ]]; then
+  path=("$HOME/.bun/bin" $path)
+fi
 
 # Reapply uniqueness after environment managers update PATH.
 typeset -U PATH path

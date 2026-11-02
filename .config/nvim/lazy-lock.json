@@ -70,6 +70,7 @@
   "vim-dadbod-ui": { "branch": "master", "commit": "afd07819d8efcefc3317205b855ad4e3513b0011" },
   "vim-illuminate": { "branch": "master", "commit": "1cc33d347c574c3bd21a4852fc9ffed677c1c58c" },
   "vim-just": { "branch": "main", "commit": "81bf1e4d6b5286c3c7b640363b7053e15a62af5f" },
+  "vim-rex-navigator": { "branch": "main", "commit": "af0a8ab72e25161064b7296ee430b8a66d35f68c" },
   "vim-startuptime": { "branch": "master", "commit": "5f33e50f1e2e2a80370c9094e4c303ea54cd2aea" },
   "vim-tmux-navigator": { "branch": "master", "commit": "e41c431a0c7b7388ae7ba341f01a0d217eb3a432" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" },
