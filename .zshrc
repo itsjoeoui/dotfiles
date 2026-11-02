@@ -20,6 +20,7 @@ path=("$HOME/.local/bin" $path)
 
 # Oh My Zsh plugins and completion.
 export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
 plugins=(git colored-man-pages)
 (( $+commands[direnv] )) && plugins+=(direnv)
 if [[ -o zle && -t 0 && -t 1 && -r "${ZSH_CUSTOM:-$ZSH/custom}/plugins/fzf-tab/fzf-tab.plugin.zsh" ]]; then
@@ -38,7 +39,6 @@ alias p="pnpm"
 alias top="gotop -s"
 alias bruh="brew update && brew upgrade && brew cleanup && brew autoremove"
 alias k="kubectl"
-alias y="yazi"
 alias lg="lazygit"
 dotfiles-check() {
   python3 "$HOME/dotfiles/.local/bin/dotfiles-check" "$@"
@@ -91,7 +91,7 @@ export HOMEBREW_API_DOMAIN="${HOMEBREW_API_DOMAIN:-https://mirrors.tuna.tsinghua
 export HOMEBREW_BOTTLE_DOMAIN="${HOMEBREW_BOTTLE_DOMAIN:-https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles}"
 export HOMEBREW_BREW_GIT_REMOTE="${HOMEBREW_BREW_GIT_REMOTE:-https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git}"
 
-# Widgets and prompt initialization require an interactive line editor.
+# Widgets require an interactive line editor; Oh My Zsh owns the prompt.
 if [[ -o zle && -t 0 && -t 1 && "$TERM" != dumb ]]; then
   [[ -r "$HOME/.fzf.zsh" ]] && source "$HOME/.fzf.zsh"
   zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
@@ -99,14 +99,12 @@ if [[ -o zle && -t 0 && -t 1 && "$TERM" != dumb ]]; then
   zle -N edit-command-line
   bindkey '^x^e' edit-command-line
   bindkey ' ' magic-space
-  (( $+commands[starship] )) && eval "$(starship init zsh)"
 fi
 
 # Load highlighting after integrations that add or change ZLE widgets.
 if [[ -o zle && -t 0 && -t 1 ]]; then
-[[ -r "$_dotfiles_brew_prefix/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && source "$_dotfiles_brew_prefix/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-[[ -r "$_dotfiles_brew_prefix/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" ]] && source "$_dotfiles_brew_prefix/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
-
+  [[ -r "$_dotfiles_brew_prefix/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && source "$_dotfiles_brew_prefix/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+  [[ -r "$_dotfiles_brew_prefix/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" ]] && source "$_dotfiles_brew_prefix/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 fi
 
 # Without mise, retain the standalone Bun installation as a fallback.

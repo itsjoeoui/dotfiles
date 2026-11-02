@@ -54,11 +54,8 @@ brew "gotop"
 brew "kubernetes-cli"
 brew "mise"
 brew "opam"
-brew "starship"
 brew "thefuck"
 brew "tree-sitter-cli"
-brew "ouch"
-brew "yazi"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line interface for 1Password
@@ -74,8 +71,6 @@ cask "discord"
 # Collaborative team software
 cask "figma"
 cask "font-caskaydia-cove-nerd-font"
-# JetBrains tools manager
-cask "jetbrains-toolbox"
 # Keyboard customiser
 cask "karabiner-elements"
 # Email client
@@ -92,8 +87,6 @@ cask "setapp"
 cask "spotify"
 # To-do & task list manager
 cask "ticktick"
-# Open-source code editor
-cask "visual-studio-code"
 # LyricsX
 cask "brewforge/extras/lyricsx-mxiris"
 

@@ -24,19 +24,38 @@ def check(name, operation):
 def run(*command):
     subprocess.run(command, cwd=root, check=True)
 
-check('Zsh syntax', lambda: run('zsh', '-n', str(root / '.zshrc')))
+for relative in ('.zshenv', '.zprofile', '.zshrc'):
+    check(f'{relative} syntax', lambda relative=relative: run('zsh', '-n', str(root / relative)))
 check('Brewfile syntax', lambda: run('ruby', '-c', str(root / 'Brewfile')))
 check('Git whitespace', lambda: run('git', 'diff', '--check', 'HEAD'))
 check('Git configuration', lambda: subprocess.run(['git', 'config', '--file', str(root / '.config/git/config'), '--list'], check=True, stdout=subprocess.DEVNULL))
-for relative in ('.config/karabiner/karabiner.json', '.config/nvim/lazyvim.json', '.config/nvim/lazy-lock.json'):
-    check(relative, lambda relative=relative: json.loads((root / relative).read_text()))
-check('mise TOML', lambda: tomllib.loads((root / '.config/mise/config.toml').read_text()))
-check('LazyGit YAML', lambda: run('ruby', '-ryaml', '-e', 'YAML.load_file(ARGV.fetch(0))', str(root / '.config/lazygit/config.yml')))
+def check_config_files():
+    # Only inspect repository files, not machine-local credentials or generated state.
+    tracked = subprocess.check_output(['git', 'ls-files', '-z'], cwd=root).decode().split('\0')
+    lua_files = []
+    for relative in filter(None, tracked):
+        path = root / relative
+        if path.suffix == '.json':
+            check(relative, lambda path=path: json.loads(path.read_text()))
+        elif path.suffix == '.toml':
+            check(relative, lambda path=path: tomllib.loads(path.read_text()))
+        elif path.suffix in ('.yml', '.yaml'):
+            check(relative, lambda path=path: run('ruby', '-ryaml', '-e', 'YAML.load_file(ARGV.fetch(0))', str(path)))
+        elif path.suffix == '.lua':
+            lua_files.append(str(path))
+    if lua_files:
+        # Compile without executing configs, loading plugins, or writing editor state.
+        script = 'local files = vim.json.decode(' + repr(json.dumps(lua_files)) + '); '
+        script += 'for _, path in ipairs(files) do local chunk, err = loadfile(path); '
+        script += 'if not chunk then vim.api.nvim_err_writeln(err); vim.cmd("cquit 1") end end'
+        check('Lua syntax', lambda: run('nvim', '--headless', '-u', 'NONE', '-i', 'NONE', '-n', '-c', 'lua ' + script, '-c', 'qa!'))
+
+check('Tracked configuration files', check_config_files)
 check('Stow conflicts', lambda: run('stow', '--simulate', '--verbose', f'--dir={root}', f'--target={Path.home()}', '.'))
 check('mise runtime availability', lambda: run('env', 'MISE_AUTO_INSTALL=false', 'MISE_EXEC_AUTO_INSTALL=false', 'mise', 'exec', '--', 'python', '-c', 'import shutil, sys; tools = ("node", "python", "ruby", "go", "pnpm", "bun", "uv", "just"); missing = [tool for tool in tools if not shutil.which(tool)]; print("Missing:", missing) if missing else None; sys.exit(bool(missing))'))
 ghostty = Path('/Applications/Ghostty.app/Contents/MacOS/ghostty')
 if ghostty.exists():
-    check('Ghostty configuration', lambda: run(str(ghostty), '+validate-config'))
+    check('Ghostty configuration', lambda: run(str(ghostty), '+validate-config', f'--config-file={root / ".config/ghostty/config"}'))
 if args.packages:
     check('Brewfile packages', lambda: run('brew', 'bundle', 'check', '--file', str(root / 'Brewfile')))
 if failures:

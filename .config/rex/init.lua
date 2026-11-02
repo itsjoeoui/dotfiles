@@ -20,34 +20,14 @@ for i = 1, 9 do
 	rex.bind("ctrl+a>" .. i, "client.tab.goto", { index = i })
 end
 
-rex.mode("resize", { exclusive = true })
-
-rex.action({
-	name = "start_resize",
-	title = "Start resizing panes",
-	args = { direction = "string" },
-	run = function(ctx, args)
-		rex.client.queue("pane.resize", {
-			direction = args.direction,
-		})
-		rex.client.queue("client.mode.enter", {
-			name = "resize",
-		})
-	end,
-})
-
 for key, direction in pairs({
 	h = "left",
 	j = "down",
 	k = "up",
 	l = "right",
 }) do
-	rex.bind("ctrl+a>" .. key, "start_resize", {
+	rex.bind("ctrl+alt+" .. key, "pane.resize", {
 		direction = direction,
-	})
-	rex.bind("resize/" .. key, "pane.resize", {
-		direction = direction,
+		amount = 3,
 	})
 end
-
-rex.bind("resize/enter", "client.mode.exit")

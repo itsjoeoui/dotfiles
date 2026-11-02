@@ -43,7 +43,6 @@ return {
       c = { "clang_format" },
       cpp = { "clang_format" },
       lua = { "stylua" },
-      java = { "google-java-format" },
       ocaml = { "ocamlformat" },
       sql = { "sql_formatter" },
       python = { "ruff_fix", "ruff_organize_imports", "ruff_format" },

@@ -1,0 +1,7 @@
+# Preferences only; authentication belongs in the keychain or local hosts.yml.
+version: "1"
+git_protocol: https
+editor: nvim
+prompt: enabled
+aliases:
+  co: pr checkout

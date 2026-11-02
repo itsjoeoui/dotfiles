@@ -29,6 +29,8 @@
         enabled = true
         autoupdate = true
 [core]
+        editor = nvim
+        autocrlf = input
         excludesfile = ~/.config/git/ignore
         fsmonitor = true
         untrackedCache = true
@@ -37,7 +39,12 @@
         autoStash = true
         updateRefs = true
 [merge]
+        tool = vimdiff
         # (just 'diff3' if git version < 2.3)
         conflictstyle = zdiff3
+[mergetool]
+        keepBackup = false
+[mergetool "vimdiff"]
+        cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [pull]
         rebase = true

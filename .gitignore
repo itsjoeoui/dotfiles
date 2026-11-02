@@ -12,6 +12,10 @@ data
 .config/karabiner/automatic_backups/
 Brewfile.lock.json
 
+# GitHub CLI authentication must never be synced with preferences.
+.config/gh/hosts.yml
+.config/gh/hosts.yaml
+
 # Pi credentials and generated state stay machine-local.
 .pi/agent/auth.json
 .pi/agent/models-store.json
